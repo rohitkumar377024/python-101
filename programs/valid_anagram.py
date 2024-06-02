@@ -3,24 +3,31 @@
 # return true if t is an anagram of s, and false otherwise.
 
 def valid_anagram(s: str, t: str) -> bool:
-    # create new sets of s and t
-    s_set = set(s)
-    t_set = set(t)
-
     # if lengths don't match, not valid anagram
-    if len(s_set) != len(t_set):
+    if len(s) != len(t):
         return False
+    
+    # check occurrence count for each element of s and t
+    hash_s = {}
+    for char in s:
+        if char in hash_s:
+            hash_s[char] += 1
+        else:
+            hash_s[char] = 1
 
-    # else check if every set element of s exist in set of t
-    for item in s_set:
-        if item not in t_set:
-            return False
+    hash_t = {}
+    for char in t:
+        if char in hash_t:
+            hash_t[char] += 1
+        else:
+            hash_t[char] = 1
 
-    return True
+    # if hashset for s and t are same, then valid anagram
+    return hash_s == hash_t
 
 # Driver Code
-s = 'anagram'
-t = 'nagaram'
+s = 'aacc'
+t = 'ccac'
 
 result = valid_anagram(s, t)
 print(result)
