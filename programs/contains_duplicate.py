@@ -5,14 +5,14 @@
 
 def contains_duplicate(nums: list[int]) -> bool:
     # create a set
-    num_set = set()
+    hashset = set()
 
-    for i in range(len(nums)):
+    for n in nums:
         # if a number exists in set, we found a duplicate
-        if nums[i] in num_set:
+        if n in hashset:
             return True
         # else add the number to the set
-        num_set.add(nums[i])
+        hashset.add(n)
 
     return False
 
