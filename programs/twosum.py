@@ -2,7 +2,7 @@
 # Given an array of integers nums and an integer target, 
 # return indices of two numbers such that add up to the target.
 
-def twoSum(nums, target):
+def two_sum(nums, target):
     # create a hashmap
     prevMap = {} # val : index
 
