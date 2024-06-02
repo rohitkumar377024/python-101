@@ -19,7 +19,7 @@ def two_sum(nums, target):
 nums = [2,7,11,15]
 target = 9
 
-result = twoSum(nums, target)
+result = two_sum(nums, target)
 print(result)
 
 
