@@ -4,18 +4,16 @@
 
 def twoSum(nums, target):
     # create a hashmap
-    hashmap = {}
+    prevMap = {} # val : index
 
-    for i in range(len(nums)):
+    for i, n in enumerate(nums):
         # if complement exists in hashmap
         # return indices for number and complement
-        complement = target - nums[i]
-        if complement in hashmap.keys():
-            return [hashmap[complement], i]
+        diff = target - n
+        if diff in prevMap:
+            return [prevMap[diff], i]
         # else add the number in hashmap with its index
-        else:
-            # print('Not Exists')
-            hashmap[nums[i]] = i
+        prevMap[n] = i
 
 # Driver Code
 nums = [2,7,11,15]
